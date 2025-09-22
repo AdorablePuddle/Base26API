@@ -17,6 +17,8 @@ def base10to26(value : int):
 def base26to10(value : str):
     output = 0
     for digit in value[::-1]:
+        if (ord(digit) - ord('a')) not in range(26):
+            continue
         output *= 26
         output += to10digit(digit)
     return output
